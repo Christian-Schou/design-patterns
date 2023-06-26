@@ -1,0 +1,3 @@
+## Behavioral Design Patterns
+
+Behavioral design patterns are a category of design patterns that focus on the interaction and communication between objects and classes. These patterns address how objects collaborate and distribute responsibilities to achieve specific behaviors and functionalities. Behavioral patterns help in managing complex control flows, encapsulating algorithms, and promoting flexibility and extensibility in the system's behavior. They provide solutions for common scenarios such as event handling, communication between objects, and managing complex workflows. Examples of behavioral design patterns include Observer, Strategy, Template Method, and Command patterns.
