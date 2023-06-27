@@ -2,17 +2,25 @@
 using AirportBaggageSystem.Observers;
 using AirportBaggageSystem.Services;
 
+// Create an instance of the BaggageSystem class which implements ISubject
 ISubject baggageSystem = new BaggageSystem();
+
+// Create instances of the observers: BaggageClaimDisplay and SecurityGate
 IObserver baggageClaimDisplay = new BaggageClaimDisplay();
 IObserver securityGate = new SecurityGate();
 
-baggageSystem.Attach(baggageClaimDisplay);
-baggageSystem.Attach(securityGate);
+// Attach the observers to the baggage system
+baggageSystem.Attach(securityGate); // Attach the SecurityGate observer
+baggageSystem.Attach(baggageClaimDisplay); // Attach the BaggageClaimDisplay observer
 
-baggageSystem.Notify("B-83182372");
+// Notify the observers with a specific baggage ID
+baggageSystem.Notify("B-83182372"); // Notifies both observers with baggage ID "B-83182372"
 
-baggageSystem.Detach(securityGate);
+// Detach the security gate observer from the baggage system
+baggageSystem.Detach(securityGate); // Detach the SecurityGate observer
 
-baggageSystem.Notify("B-51735461");
+// Notify the remaining observer with a different baggage ID
+baggageSystem.Notify("B-51735461"); // Notifies the BaggageClaimDisplay observer with baggage ID "B-51735461"
 
-baggageSystem.Detach(baggageClaimDisplay);
+// Detach the baggage claim display observer from the baggage system
+baggageSystem.Detach(baggageClaimDisplay); // Detach the BaggageClaimDisplay observer
